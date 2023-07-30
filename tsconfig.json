@@ -1,11 +1,15 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2015",
     "lib": [
+      "es6",
       "dom",
       "dom.iterable",
       "esnext"
     ],
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -18,9 +22,17 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": "src",
+    "strictFunctionTypes": true
+  
   },
   "include": [
-    "src"
+    "src/**/*.tsx",
+    "src/**/*.ts",
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "src/**/*.json",
+    "src/**/*.d.ts",
   ]
 }
