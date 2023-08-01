@@ -33,7 +33,7 @@ const Home = () => {
 
   return (
     <div>
-      <PhotoGallery photos={data} />
+      <PhotoGallery photos={data} setPhotos={setData} />
       {isFetching && <p>Loading...</p>}
     </div>
   );

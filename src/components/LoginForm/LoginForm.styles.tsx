@@ -8,10 +8,9 @@ export const Form = styled.form`
   padding: 80px;
   height: 100%;
   gap: 10px;
-  width: 100%;
+  width: 500px;
   @media (max-width: 600px) {
-    padding: 0;
-    height: 400px;
+    padding: 10px;
   }
 `;
 export const LoginButton = styled.button`

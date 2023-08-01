@@ -2,11 +2,11 @@ import styled from "@emotion/styled/macro";
 
 export const Container = styled.div`
   display: flex;
-  justify-content: start;
+  justify-content: center;
   flex-direction: row;
   align-items: center;
-  padding: 20px;
-
+  border-radius: 10px;
+  background-color: white;
   @media (max-width: 600px) {
     padding: 0;
   }

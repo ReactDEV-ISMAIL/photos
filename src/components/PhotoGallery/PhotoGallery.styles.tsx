@@ -3,11 +3,8 @@ import styled from "@emotion/styled/macro";
 export const GridContainer = styled.div`
   display: grid;
   display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(200px, 1fr)
-  ); /* Adjust minmax values as needed */
-  gap: 10px; /* Adjust as needed */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
 `;
 
 export const PhotoCard = styled.div`
@@ -26,5 +23,5 @@ export const LikeButton = styled.button`
   cursor: pointer;
 `;
 export const HeartIcon = styled.span`
-  font-size: 20px;
+  font-size: 25px;
 `;

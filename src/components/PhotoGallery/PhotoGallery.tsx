@@ -10,24 +10,22 @@ import {
 
 interface PhotoGalleryProps {
   photos: Photo[];
+  setPhotos: React.Dispatch<React.SetStateAction<Photo[]>>;
 }
-const PhotoGallery: React.FC<PhotoGalleryProps> = ({ photos }) => {
+const PhotoGallery: React.FC<PhotoGalleryProps> = ({ photos, setPhotos }) => {
   const likePhoto = (id: string) => {
-    axiosInstance
-      .post(`/photos/${id}/like`)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    const newPhotos = photos.map((e) => ({
+      ...e,
+      liked_by_user: e.id === id ? !e.liked_by_user : e.liked_by_user,
+    }));
+    setPhotos(newPhotos);
   };
   return (
     <GridContainer>
       {photos.map((photo) => (
         <PhotoCard key={photo.id}>
           <PhotoImg
-            src={photo.urls.thumb}
+            src={photo.urls?.thumb}
             alt={photo.alt_description}
             width="200px"
             height={"200px"}
@@ -39,7 +37,7 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ photos }) => {
               console.log(photo.id);
             }}
           >
-            <HeartIcon>{"❤️"}</HeartIcon>
+            <HeartIcon>{photo.liked_by_user ? "❤️" : "🤍"}</HeartIcon>
           </LikeButton>
         </PhotoCard>
       ))}
